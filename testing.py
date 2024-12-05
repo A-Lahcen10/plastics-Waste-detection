@@ -9,13 +9,13 @@ cap.set(3, 1280)  # Définir la largeur de la vidéo
 cap.set(4, 720)   # Définir la hauteur de la vidéo
 
 # Chargement du modèle YOLO
-model = YOLO("best11.pt")  # Chemin vers le fichier YOLOv8 pré-entraîné
+model = YOLO("model.pt")  # Chemin vers le model
 classname = ["HDPE", "PET", "PP", "PS"]  # Classes définies
 mycolor = (0, 0, 255)  # Couleur des boîtes
 
 # Boucle principale pour capturer les images et effectuer la détection
 while True:
-    success, img = cap.read()  # Lecture d'une image depuis la caméra
+    success, img = cap.read()  
     if not success:
         print("Erreur lors de la capture de l'image.")
         break
@@ -59,6 +59,6 @@ while True:
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
-# Libération des ressources
+
 cap.release()
 cv2.destroyAllWindows()
