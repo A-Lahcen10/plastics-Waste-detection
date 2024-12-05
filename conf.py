@@ -6,9 +6,9 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'RAG multi model'
-copyright = '2024, GIIADS, by Maalouf IMAD '
-author = 'imad maalouf'
+project = 'Plastic Waste detection and tracking'
+copyright = '2024, GIIADS, by AMNEZOU LAHCEN '
+author = 'AMNEZOU LAHCEN'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

@@ -1,5 +1,5 @@
 
-Retrieval-Augmented Generation (RAG)
+Plastic Waste Detection and tracking
 ====================================
 
 
