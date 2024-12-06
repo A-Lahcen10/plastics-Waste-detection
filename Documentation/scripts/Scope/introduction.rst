@@ -9,20 +9,8 @@ Introduction
    :alt: Alternative text for the image
 
 -------------------------------------------------------------------
+Le projet vise à développer une interface de supervision pour une ligne de tri des déchets plastiques, sous la forme d'une application permettant de superviser en temps réel. Cette application, basée sur la détection d'objets et le suivi des mouvements, sera capable de détecter, identifier tous les types de déchets plastiques, afin d'améliorer l'efficacité et la précision des processus de tri.
 
 
-.. raw:: html
-
-    <p style="text-align: justify;"><span style="color:#000080;"><i>    
-
-    Retrieval-Augmented Generation (RAG) is a hybrid approach combining the power of large language models (LLMs) with external knowledge sources. It enhances the capabilities of LLMs by integrating a retrieval mechanism that fetches relevant documents or information from a predefined dataset or the web, augmenting the model's generative process. This is particularly useful for tasks requiring up-to-date or domain-specific information that might not be part of the model's training data.
-
-    </i></span></p>
-
-
-
-.. raw:: html
-
-    <p><span style="color:white;">'</p></span>
 
 
