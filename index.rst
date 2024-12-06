@@ -1,9 +1,9 @@
 
-Plastic Waste Detection and tracking
-====================================
+Projet de Détection et Suivi des Déchets Plastiques
+===================================================
 
 
-.. figure:: /Documentation/images/introo.jpg
+.. figure:: /Documentation/images/images.jpg
    :width: 100%
    :alt: Alternative text for the image
    :name: logo
