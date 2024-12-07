@@ -2,8 +2,8 @@ Introduction
 ====================
 
 
-.. figure:: /Documentation/images/Image2.jpg
-   :width: 700
+.. figure:: plastics-Waste-detection-and-Tracking/images/Image2.jpg
+   :width: 100%
    :align: center
    :alt: Alternative text for the image
 
