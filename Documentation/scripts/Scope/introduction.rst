@@ -13,7 +13,7 @@ Le projet vise à développer une interface de supervision pour une ligne de tri
 
 
 
-
+jouol;Introductioniufgouyoyu iugyfio Introductioniufgouyoyu hujvcuykc 
 
 
 
