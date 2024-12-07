@@ -2,7 +2,7 @@ Introduction
 ====================
 
 
-.. figure:: /Documentation/images/image2.jpg
+.. figure:: /Documentation/images/Image2.jpg
    :width: 700
    :align: center
    :alt: Alternative text for the image
