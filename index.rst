@@ -3,7 +3,7 @@ Projet de Détection et Suivi des Déchets Plastiques
 ===================================================
 
 
-.. figure:: /Documentation/images/images.jpg
+.. figure:: /Documentation/images/Images.jpg
    :width: 100%
    :alt: Alternative text for the image
    :name: logo
