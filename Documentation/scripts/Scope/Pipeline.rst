@@ -1,2 +1,0 @@
-Pipepline de projet
-=====================
