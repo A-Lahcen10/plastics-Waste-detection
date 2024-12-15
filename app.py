@@ -4,7 +4,7 @@ from ultralytics import YOLO
 import tempfile
 
 # Charger le modèle YOLO 
-model = YOLO('model.pt')
+model = YOLO('plastics-Waste-detection-and-Tracking\model.pt')
 class_list = model.names
 # Les classes définies 
 
