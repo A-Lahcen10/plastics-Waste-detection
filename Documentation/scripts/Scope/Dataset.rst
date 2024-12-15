@@ -11,7 +11,7 @@ HDPE (Polyéthylène Haute Densité) :
 Le HDPE est l'un des plastiques les plus recyclés, car il peut être facilement transformé en de nouveaux produits comme des panneaux en plastique ou des matériaux de construction.
 
 .. figure:: /Documentation/images/hdpe.jpg
-   :width: 100%
+   :width: 50%
    :alt: Alternative text for the image
 
 PET (Polyéthylène Téréphtalate) :
@@ -20,7 +20,7 @@ PET (Polyéthylène Téréphtalate) :
      Le PET est l'un des plastiques les plus recyclés au monde. Il peut être réutilisé pour fabriquer de nouveaux contenants, des vêtements...
 
 .. figure:: /Documentation/images/PET.jpg
-   :width: 100%
+   :width: 50%
    :alt: Alternative text for the image
 
 PP (Polypropylène) :
@@ -29,7 +29,7 @@ PP (Polypropylène) :
      Il est généralement translucide à blanc, mais peut aussi être produit en différentes couleurs. Il est plus souple que le HDPE, mais reste rigide.
 
 .. figure:: /Documentation/images/pp.jpg
-   :width: 100%
+   :width: 50%
    :alt: Alternative text for the image
 
 Polystyrène (PS) :
@@ -38,5 +38,5 @@ Polystyrène (PS) :
      Utilisations courantes :Contenants alimentaires jetables (gobelets, assiettes) et contenants de yaourts (ex : pots Danone).
 
 .. figure:: /Documentation/images/ps.jpg
-   :width: 100%
+   :width: 50%
    :alt: Alternative text for the image
