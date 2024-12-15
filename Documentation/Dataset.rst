@@ -1,5 +1,7 @@
 Les differents types de plastique 
 ==================================
+
+
      Les données utilisées pour entraîner le modèle de détection des déchets plastiques sont constituées d'images collectées dans des environnements réels. Chaque type de plastique possède des caractéristiques distinctes qui influencent non seulement leur identification visuelle mais aussi leur comportement lors du recyclage et du tri.
 Les types de déchets plastiques  sont les suivants :
 
@@ -34,7 +36,7 @@ Polystyrène (PS) :
 -------------------
      Le polystyrène est un plastique rigide ou expansé, souvent utilisé pour des produits légers et jetables. Il est apprécié pour sa légèreté et sa capacité à absorber les chocs lorsqu'il est sous forme mousseuse.
      Utilisations courantes :Contenants alimentaires jetables (gobelets, assiettes) et contenants de yaourts (ex : pots Danone).
-     
+
 .. figure:: /Documentation/images/ps.jpg
    :width: 100%
    :alt: Alternative text for the image
