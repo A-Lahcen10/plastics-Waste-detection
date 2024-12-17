@@ -21,5 +21,5 @@ Projet de Détection et Suivi des Déchets Plastiques
 
    Documentation/scripts/Scope/introduction.rst
    Documentation/scripts/Scope/Dataset.rst
-
+   Documentation/scripts/Scope/Pipeline_Step_by_step.rst
 
