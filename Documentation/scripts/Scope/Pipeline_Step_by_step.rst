@@ -7,7 +7,7 @@ L'idée générale de ce projet repose sur l'automatisation intelligente d'une l
 L'output de notre projet est plus spécifiquement une interface de supervision. Cette interface permet au superviseur de la ligne de tri de suivre en temps réel le déroulement du processus, notamment les objets détectés, les décisions prises par le système et l'état global de la ligne. Cela facilite la surveillance et l'intervention rapide en cas de besoin, tout en optimisant l'efficacité du tri dans un environnement industriel.
 
 .. figure:: /Documentation/images/1.jpeg
-   :width: 70%
+   :width: 80%
    :alt: Alternative text for the image
 
 
@@ -64,7 +64,7 @@ Ces données (images et vidéos) constituent une base solide pour entraîner not
 Sélection d'un modèle d'IA adapté à la tâche de détection d'objets. Nous avons choisi de travailler avec le modèle YOLOv11, car cette version est la plus précise par rapport aux autres versions de YOLO. Plus spécifiquement, nous avons opté pour YOLOv11n, car il présente le meilleur compromis entre précision et performance. En effet, ce modèle offre un temps de traitement des données inférieur à 2 ms par image, ce qui est essentiel pour garantir une détection en temps réel et une efficacité optimale sur une ligne de tri. Ainsi, le choix final s'est porté sur YOLOv11n pour sa rapidité et sa précision.
 
 .. figure:: /Documentation/images/yolov11.jpeg
-   :width: 70%
+   :width: 100%
    :alt: Alternative text for the image
 
 4eme étape : Entraînement du modèle
@@ -77,7 +77,7 @@ L'entraînement  nécessite plusieurs étapes essentielles. Voici le processus d
 La première étape consiste à monter Google Drive afin d'y accéder directement depuis Colab. Cela permet d'accéder aux Dataset et de stocker les fichiers de données et d'enregistrer les résultats d'entraînement dans le Drive. Le code pour cette étape est :
 
 .. figure:: /Documentation/images/drive.jpeg
-   :width: 90%
+   :width: 100%
    :alt: Alternative text for the image
 
 
@@ -85,7 +85,7 @@ La première étape consiste à monter Google Drive afin d'y accéder directemen
 La deuxième étape consiste à installer la bibliothèque Ultralytics, qui contient l'implémentation du modèle YOLOv11n, ainsi que ses outils nécessaires pour l'entraînement et l'évaluation. Nous installons la bibliothèque via la commande suivante :
 
 .. figure:: /Documentation/images/ultralytics.jpeg
-   :width: 90%
+   :width: 100%
    :alt: Alternative text for the image
 
 
@@ -93,7 +93,7 @@ La deuxième étape consiste à installer la bibliothèque Ultralytics, qui cont
 La troisième étape consiste à définir le chemin où le fichier YAML contenant la configuration de l'entraînement sera enregistré. Ce fichier YAML est essentiel car il spécifie les chemins des données d'entraînement et de validation, ainsi que les classes à détecter. Le code suivant définit le chemin d'enregistrement :
 
 .. figure:: /Documentation/images/yaml.jpeg
-   :width: 90%
+   :width: 100%
    :alt: Alternative text for the image
 
    
@@ -101,7 +101,7 @@ La troisième étape consiste à définir le chemin où le fichier YAML contenan
 Le fichier YAML contient des informations sur les chemins d'accès aux ensembles de données (d'entraînement et de validation), ainsi que les classes que le modèle doit apprendre à détecter. Voici comment nous générons ce fichier YAML :
 
 .. figure:: /Documentation/images/yaml1.jpeg
-   :width: 90%
+   :width: 100%
    :alt: Alternative text for the image
 
 
@@ -120,7 +120,7 @@ La validation de la performance du modèle est effectuée à l'aide de plusieurs
 Pour notre modèle, nous avons obtenu les résultats suivants lors de l'évaluation du modèle YOLOv11n sur différentes classes de déchets :
 
 .. figure:: /Documentation/images/val.jpeg
-   :width: 90%
+   :width: 100%
    :alt: Alternative text for the image
 
 
