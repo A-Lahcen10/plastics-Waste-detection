@@ -18,24 +18,25 @@ La collecte de données constitue la première étape essentielle du projet. Ell
 **PET :**
 
 .. figure:: /Documentation/images/pet1.jpg
-   :width: 30%
+   :width: 20%
    :alt: Alternative text for the image
 
 **HDPE :**
 
 .. figure:: /Documentation/images/hdpe1.jpeg
-   :width: 30%
+   :width: 20%
    :alt: Alternative text for the image
 
 **PP :**
 
 .. figure:: /Documentation/images/pp1.jpg
-   :width: 30%
+   :width: 20%
    :alt: Alternative text for the image
 
 **PS :**
+
 .. figure:: /Documentation/images/ps1.jpeg
-   :width: 30%
+   :width: 20%
    :alt: Alternative text for the image
 
 
@@ -47,7 +48,7 @@ Nettoyage des données : Suppression des images inutilisables, bruitées ou de m
 Annotation des données : Étiquetage manuel des objets présents dans les images à l'aide de Roboflow.
 
 .. figure:: /Documentation/images/roboflow.jpg
-   :width: 30%
+   :width: 50%
    :alt: Alternative text for the image
 
 Redimensionnement des images : Adaptation de la taille des images pour qu'elles soient compatibles avec le modèle. Pour cela, nous avons choisi une dimension de 640x640.
@@ -58,7 +59,7 @@ Redimensionnement des images : Adaptation de la taille des images pour qu'elles 
 Sélection d'un modèle d'IA adapté à la tâche de détection d'objets. Nous avons choisi de travailler avec le modèle YOLOv11, car cette version est la plus précise par rapport aux autres versions de YOLO. Plus spécifiquement, nous avons opté pour YOLOv11n, car il présente le meilleur compromis entre précision et performance. En effet, ce modèle offre un temps de traitement des données inférieur à 2 ms par image, ce qui est essentiel pour garantir une détection en temps réel et une efficacité optimale sur une ligne de tri. Ainsi, le choix final s'est porté sur YOLOv11n pour sa rapidité et sa précision.
 
 .. figure:: /Documentation/images/yolov11.jpeg
-   :width: 30%
+   :width: 50%
    :alt: Alternative text for the image
 
 **4eme étape : Entraînement du modèle**
@@ -70,35 +71,35 @@ L'entraînement  nécessite plusieurs étapes essentielles. Voici le processus d
 La première étape consiste à monter Google Drive afin d'y accéder directement depuis Colab. Cela permet d'accéder aux Dataset et de stocker les fichiers de données et d'enregistrer les résultats d'entraînement dans le Drive. Le code pour cette étape est :
 
 .. figure:: /Documentation/images/drive.jpeg
-   :width: 30%
+   :width: 70%
    :alt: Alternative text for the image
 
 2-Installer la bibliothèque Ultralytics :
 La deuxième étape consiste à installer la bibliothèque Ultralytics, qui contient l'implémentation du modèle YOLOv11n, ainsi que ses outils nécessaires pour l'entraînement et l'évaluation. Nous installons la bibliothèque via la commande suivante :
 
 .. figure:: /Documentation/images/ultralytics.jpeg
-   :width: 30%
+   :width: 70%
    :alt: Alternative text for the image
 
 3-Définir le chemin d'enregistrement du fichier YAML :
 La troisième étape consiste à définir le chemin où le fichier YAML contenant la configuration de l'entraînement sera enregistré. Ce fichier YAML est essentiel car il spécifie les chemins des données d'entraînement et de validation, ainsi que les classes à détecter. Le code suivant définit le chemin d'enregistrement :
 
 .. figure:: /Documentation/images/yaml.jpeg
-   :width: 30%
+   :width: 70%
    :alt: Alternative text for the image
 
 4.Création du fichier YAML :
 Le fichier YAML contient des informations sur les chemins d'accès aux ensembles de données (d'entraînement et de validation), ainsi que les classes que le modèle doit apprendre à détecter. Voici comment nous générons ce fichier YAML :
 
 .. figure:: /Documentation/images/yaml1.jpeg
-   :width: 30%
+   :width: 70%
    :alt: Alternative text for the image
 
 5.Entraînement du modèle :
 La dernière étape consiste à entraîner le modèle YOLO11n en utilisant le fichier YAML comme configuration. Le modèle est entraîné pour 60 époques avec la commande suivante :
 
 .. figure:: /Documentation/images/train.jpeg
-   :width: 30%
+   :width: 90%
    :alt: Alternative text for the image
 
 **5eme etape : Évaluation du modèle**
@@ -107,7 +108,7 @@ La validation de la performance du modèle est effectuée à l'aide de plusieurs
 Pour notre modèle, nous avons obtenu les résultats suivants lors de l'évaluation du modèle YOLOv11n sur différentes classes de déchets :
 
 .. figure:: /Documentation/images/val.jpeg
-   :width: 30%
+   :width: 70%
    :alt: Alternative text for the image
 
 -Précision (P) : De manière générale, la précision est élevée, avec des valeurs exceptionnelles pour certaines classes comme PET et HDPE. Cela signifie que le modèle détecte de manière fiable les déchets sans générer trop de faux positifs.
