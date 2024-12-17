@@ -7,7 +7,7 @@ L'idée générale de ce projet repose sur l'automatisation intelligente d'une l
 L'output de notre projet est plus spécifiquement une interface de supervision. Cette interface permet au superviseur de la ligne de tri de suivre en temps réel le déroulement du processus, notamment les objets détectés, les décisions prises par le système et l'état global de la ligne. Cela facilite la surveillance et l'intervention rapide en cas de besoin, tout en optimisant l'efficacité du tri dans un environnement industriel.
 
 .. figure:: /Documentation/images/1.jpeg
-   :width: 80%
+   :width: 100%
    :alt: Alternative text for the image
 
 
@@ -19,25 +19,25 @@ La collecte de données constitue la première étape essentielle du projet. Ell
 **PET :**
 
 .. figure:: /Documentation/images/pet1.jpg
-   :width: 35%
+   :width: 40%
    :alt: Alternative text for the image
 
 **HDPE :**
 
 .. figure:: /Documentation/images/hdpe1.jpeg
-   :width: 35%
+   :width: 40%
    :alt: Alternative text for the image
 
 **PP :**
 
 .. figure:: /Documentation/images/pp1.jpg
-   :width: 35%
+   :width: 40%
    :alt: Alternative text for the image
 
 **PS :**
 
 .. figure:: /Documentation/images/ps1.jpeg
-   :width: 35%
+   :width: 40%
    :alt: Alternative text for the image
 
 
