@@ -116,7 +116,7 @@ Pour notre modèle, nous avons obtenu les résultats suivants lors de l'évaluat
 -mAP50 et mAP50-95 : Ces valeurs montrent que le modèle est capable de détecter et de localiser avec une grande précision, en particulier pour des classes comme PET (mAP50 = 0.995) et HDPE (mAP50 = 0.975).
 Ces résultats démontrent que notre modèle YOLOv11n offre des performances solides et fiables pour la détection des déchets plastiques. L'évaluation est donc cruciale pour confirmer que le modèle répond aux exigences d'une application en temps réel, capable de détecter et classer les déchets plastiques dans des environnements industriels.
 
-*6eme etape : Déploiement du modèle*
+**6eme etape : Déploiement du modèle**
 
 Le déploiement du modèle inclut la création d'une interface de supervision visant à suivre en temps réel le processus de tri des déchets. Cette interface sera développée à l'aide de Streamlit, une bibliothèque Python permettant de créer facilement des applications web interactives. L'application aura pour objectifs principaux :
 Visualisation en temps réel : L'interface permettra de suivre le processus de tri des déchets, offrant une vue instantanée du fonctionnement du modèle à mesure qu'il détecte et classe les objets sur la ligne de tri.
