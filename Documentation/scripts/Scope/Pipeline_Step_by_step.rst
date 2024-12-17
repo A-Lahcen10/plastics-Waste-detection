@@ -74,11 +74,13 @@ L'entraînement du modèle est une étape clé pour permettre à YOLOv11n d'appr
 L'entraînement  nécessite plusieurs étapes essentielles. Voici le processus détaillé avec des explications à chaque étape :
 
 **1-Monter Google Drive :**
+
 La première étape consiste à monter Google Drive afin d'y accéder directement depuis Colab. Cela permet d'accéder aux Dataset et de stocker les fichiers de données et d'enregistrer les résultats d'entraînement dans le Drive. Le code pour cette étape est :
 
 .. figure:: /Documentation/images/drive.jpeg
    :width: 70%
    :alt: Alternative text for the image
+
 
 **2-Installer la bibliothèque Ultralytics :**
 
@@ -88,6 +90,7 @@ La deuxième étape consiste à installer la bibliothèque Ultralytics, qui cont
    :width: 70%
    :alt: Alternative text for the image
 
+
 **3-Définir le chemin d'enregistrement du fichier YAML :**
 
 La troisième étape consiste à définir le chemin où le fichier YAML contenant la configuration de l'entraînement sera enregistré. Ce fichier YAML est essentiel car il spécifie les chemins des données d'entraînement et de validation, ainsi que les classes à détecter. Le code suivant définit le chemin d'enregistrement :
@@ -96,6 +99,7 @@ La troisième étape consiste à définir le chemin où le fichier YAML contenan
    :width: 70%
    :alt: Alternative text for the image
 
+   
 **4.Création du fichier YAML :**
 
 Le fichier YAML contient des informations sur les chemins d'accès aux ensembles de données (d'entraînement et de validation), ainsi que les classes que le modèle doit apprendre à détecter. Voici comment nous générons ce fichier YAML :
@@ -103,6 +107,7 @@ Le fichier YAML contient des informations sur les chemins d'accès aux ensembles
 .. figure:: /Documentation/images/yaml1.jpeg
    :width: 70%
    :alt: Alternative text for the image
+
 
 **5.Entraînement du modèle :**
 
@@ -122,6 +127,7 @@ Pour notre modèle, nous avons obtenu les résultats suivants lors de l'évaluat
 .. figure:: /Documentation/images/val.jpeg
    :width: 70%
    :alt: Alternative text for the image
+
 
 **-Précision (P) :** De manière générale, la précision est élevée, avec des valeurs exceptionnelles pour certaines classes comme PET et HDPE. Cela signifie que le modèle détecte de manière fiable les déchets sans générer trop de faux positifs.
 
