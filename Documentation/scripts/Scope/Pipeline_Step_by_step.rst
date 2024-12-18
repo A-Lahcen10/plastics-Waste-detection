@@ -138,10 +138,11 @@ La validation de la performance du modèle est effectuée à l'aide de plusieurs
 Pour notre modèle. Voila le code pour faire la validation de modele :
 
 .. code-block:: python
-   
+
     !yolo task=detect mode=val model=/content/runs/detect/train/weights/best.pt data=/content/drive/MyDrive/object_detection/data/dataset.yaml
 
- nous avons obtenu les résultats suivants lors de l'évaluation du modèle YOLOv11n sur différentes classes de déchets :
+
+nous avons obtenu les résultats suivants lors de l'évaluation du modèle YOLOv11n sur différentes classes de déchets :
 
 .. figure:: /Documentation/images/val.jpeg
    :width: 100%
