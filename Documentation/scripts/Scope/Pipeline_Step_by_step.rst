@@ -98,6 +98,7 @@ La troisième étape consiste à définir le chemin où le fichier YAML contenan
 et ce fichier YAML est essentiel car il spécifie les chemins des données d'entraînement et de validation, ainsi que les classes à détecter. Voici comment nous générons ce fichier YAML :
 
 .. code-block:: python
+
     # Chemin où le fichier sera enregistré
     yaml_path = "/content/drive/MyDrive/object_detection/data/dataset.yaml"
 
@@ -126,6 +127,7 @@ et ce fichier YAML est essentiel car il spécifie les chemins des données d'ent
 La dernière étape consiste à entraîner le modèle YOLO11n en utilisant le fichier YAML comme configuration. Le modèle est entraîné pour 60 époques avec la commande suivante :
 
 .. code-block:: python
+
     !yolo task=detect train model=yolo11n.pt data=/content/drive/MyDrive/object_detection/data/dataset.yaml epochs=60
 
 
@@ -136,6 +138,7 @@ La validation de la performance du modèle est effectuée à l'aide de plusieurs
 Pour notre modèle. Voila le code pour faire la validation de modele :
 
 .. code-block:: python
+   
     !yolo task=detect mode=val model=/content/runs/detect/train/weights/best.pt data=/content/drive/MyDrive/object_detection/data/dataset.yaml
 
  nous avons obtenu les résultats suivants lors de l'évaluation du modèle YOLOv11n sur différentes classes de déchets :
