@@ -76,48 +76,69 @@ L'entraînement  nécessite plusieurs étapes essentielles. Voici le processus d
 **1-Monter Google Drive :**
 La première étape consiste à monter Google Drive afin d'y accéder directement depuis Colab. Cela permet d'accéder aux Dataset et de stocker les fichiers de données et d'enregistrer les résultats d'entraînement dans le Drive. Le code pour cette étape est :
 
-.. figure:: /Documentation/images/drive.jpeg
-   :width: 100%
-   :alt: Alternative text for the image
+.. code-block:: python
+
+    from google.colab import drive
+    drive.mount('/content/drive')
 
 
 **2-Installer la bibliothèque Ultralytics :**
 La deuxième étape consiste à installer la bibliothèque Ultralytics, qui contient l'implémentation du modèle YOLOv11n, ainsi que ses outils nécessaires pour l'entraînement et l'évaluation. Nous installons la bibliothèque via la commande suivante :
 
-.. figure:: /Documentation/images/ultralytics.jpeg
-   :width: 100%
-   :alt: Alternative text for the image
-
-
-**3-Définir le chemin d'enregistrement du fichier YAML :**
-La troisième étape consiste à définir le chemin où le fichier YAML contenant la configuration de l'entraînement sera enregistré. Ce fichier YAML est essentiel car il spécifie les chemins des données d'entraînement et de validation, ainsi que les classes à détecter. Le code suivant définit le chemin d'enregistrement :
-
-.. figure:: /Documentation/images/yaml.jpeg
-   :width: 100%
-   :alt: Alternative text for the image
-
+.. code-block:: python
    
-**4.Création du fichier YAML :**
-Le fichier YAML contient des informations sur les chemins d'accès aux ensembles de données (d'entraînement et de validation), ainsi que les classes que le modèle doit apprendre à détecter. Voici comment nous générons ce fichier YAML :
-
-.. figure:: /Documentation/images/yaml1.jpeg
-   :width: 100%
-   :alt: Alternative text for the image
+    %pip install ultralytics
+    import ultralytics
+    ultralytics.checks()
 
 
-**5.Entraînement du modèle :**
+
+**3-Définir le chemin d'enregistrement et Création du fichier YAML :**
+La troisième étape consiste à définir le chemin où le fichier YAML contenant la configuration de l'entraînement sera enregistré.Le fichier YAML contient des informations sur les chemins d'accès aux ensembles de données (d'entraînement et de validation), ainsi que les classes que le modèle doit apprendre à détecter.
+et ce fichier YAML est essentiel car il spécifie les chemins des données d'entraînement et de validation, ainsi que les classes à détecter. Voici comment nous générons ce fichier YAML :
+
+.. code-block:: python
+    # Chemin où le fichier sera enregistré
+    yaml_path = "/content/drive/MyDrive/object_detection/data/dataset.yaml"
+
+    # Contenu du fichier YAML
+    yaml_content = """\
+    path: /content/drive/MyDrive/object_detection/data
+    train: /content/drive/MyDrive/object_detection/data/train
+    val: /content/drive/MyDrive/object_detection/data/valid
+
+    nc: 4
+    names: ["HDPE", "PET", "PP", "PS"]
+    """
+
+    # Création du fichier YAML
+    try:
+        with open(yaml_path, "w") as yaml_file:
+            yaml_file.write(yaml_content)
+            print(f"Fichier 'dataset.yaml' créé avec succès à l'emplacement : {yaml_path}")
+        except Exception as e:
+        print(f"Erreur lors de la création du fichier : {e}")
+
+
+
+
+**4.Entraînement du modèle :**
 La dernière étape consiste à entraîner le modèle YOLO11n en utilisant le fichier YAML comme configuration. Le modèle est entraîné pour 60 époques avec la commande suivante :
 
-.. figure:: /Documentation/images/train.jpeg
-   :width: 100%
-   :alt: Alternative text for the image
+.. code-block:: python
+   !yolo task=detect train model=yolo11n.pt data=/content/drive/MyDrive/object_detection/data/dataset.yaml epochs=60
 
 
 5eme etape : Évaluation du modèle
 ---------------------------------
 
 La validation de la performance du modèle est effectuée à l'aide de plusieurs métriques clés, telles que la précision, le rappel et le mAP (Mean Average Precision). Ces indicateurs permettent d'évaluer la capacité du modèle à détecter et classifier correctement les déchets plastiques dans de nouvelles images, garantissant ainsi une détection fiable et efficace.
-Pour notre modèle, nous avons obtenu les résultats suivants lors de l'évaluation du modèle YOLOv11n sur différentes classes de déchets :
+Pour notre modèle. Voila le code pour faire la validation de modele :
+
+.. code-block:: python
+   !yolo task=detect mode=val model=/content/runs/detect/train/weights/best.pt data=/content/drive/MyDrive/object_detection/data/dataset.yaml
+
+ nous avons obtenu les résultats suivants lors de l'évaluation du modèle YOLOv11n sur différentes classes de déchets :
 
 .. figure:: /Documentation/images/val.jpeg
    :width: 100%
