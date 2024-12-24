@@ -157,9 +157,122 @@ nous avons obtenu les résultats suivants lors de l'évaluation du modèle YOLOv
 
 Ces résultats démontrent que notre modèle YOLOv11n offre des performances solides et fiables pour la détection des déchets plastiques. L'évaluation est donc cruciale pour confirmer que le modèle répond aux exigences d'une application en temps réel, capable de détecter et classer les déchets plastiques dans des environnements industriels.
 
-6eme etape : Déploiement du modèle
-----------------------------------
+6eme etape : Déploiement du Modèle : Création d'une Interface de Supervision pour une Ligne de Tri des Déchets
+--------------------------------------------------------------------------------------------------------------
 
-Le déploiement du modèle inclut la création d'une interface de supervision visant à suivre en temps réel le processus de tri des déchets. Cette interface sera développée à l'aide de Streamlit, une bibliothèque Python permettant de créer facilement des applications web interactives. L'application aura pour objectifs principaux :
-Visualisation en temps réel : L'interface permettra de suivre le processus de tri des déchets, offrant une vue instantanée du fonctionnement du modèle à mesure qu'il détecte et classe les objets sur la ligne de tri.
-Suivi des performances : Elle assurera un suivi précis et interactif des performances du système de tri.
+Le déploiement du modèle inclut la créatiDans le cadre du développement d'une ligne de tri des déchets automatisée, une interface de supervision a été conçue pour visualiser et suivre en temps réel le processus de tri. Cette application, développée avec Streamlit, utilise un modèle YOLO préentraîné pour la détection et le suivi des objets. Le système permet de traiter des flux vidéo provenant d'une vidéo uploadée ou d'une caméra en direct et d'afficher les résultats en temps réel.
+
+Les étapes ci-dessous détaillent les fonctionnalités du code et le rôle de chaque composant dans l'implémentation de cette solution.
+**1.Chargement du Modèle YOLO**
+
+Dans cette étape, nous chargeons notre modèle YOLO pré-entraîné pour détecter les objets dans une vidéo ou un flux en direct.
+
+.. code-block:: python
+
+    import cv2
+    from ultralytics import YOLO
+    import tempfile
+    import streamlit as st
+
+    # Charger le modèle YOLO 
+    model = YOLO('plastics-Waste-detection-and-Tracking/model.pt')
+    class_list = model.names
+
+**cv2** : Utilisé pour capturer et traiter des flux vidéo.
+**ultralytics.YOLO **: Permet d'utiliser un modèle YOLO pour la détection et le suivi des objets.
+**tempfile** : Utilisé pour gérer temporairement les fichiers vidéos uploadés.
+**streamlit** : Framework interactif pour créer une interface utilisateur.
+
+**2.Fonction pour Ouvrir le Flux Vidéo et Détecter les Objets**
+
+Cette fonction gère l'ouverture de la vidéo, qu'elle provienne d'un fichier téléchargé ou de la caméra. Elle traite ensuite le flux image par image pour appliquer la détection d'objets avec YOLO.
+
+.. code-block:: python
+    def open_video(video_path=None, use_camera=False):
+      if use_camera:
+         cap = cv2.VideoCapture(0)  
+      else:
+         cap = cv2.VideoCapture(video_path) 
+
+      if not cap.isOpened():
+         st.error("Impossible d'ouvrir la caméra. Vérifiez votre caméra.")
+         return
+
+      stframe = st.empty()  # Espace pour afficher le flux vidéo
+      while st.session_state.video_open:
+        ret, frame = cap.read()
+        if not ret:
+            st.warning("Impossible de lire le flux vidéo.")
+            break
+
+        # Détection d'objets avec YOLO
+        results = model.track(frame, persist=True)
+
+
+**3.Détection des Objets et Suivi**
+
+YOLO renvoie les coordonnées des boîtes de détection, les classes détectées et les IDs des objets suivis. Le code permet d'afficher ces informations sur le flux vidéo.
+
+
+.. code-block:: python
+
+    if results[0].boxes.data is not None:
+        boxes = results[0].boxes.xyxy
+        if results[0].boxes.id is not None:
+           track_ids = results[0].boxes.id.int()
+        else:
+           track_ids = []
+        class_indices = results[0].boxes.cls.int()
+        confidences = results[0].boxes.conf
+
+        for box, track_id, class_idx, conf in zip(boxes, track_ids, class_indices, confidences):
+            x1, y1, x2, y2 = map(int, box)
+            class_name = class_list[int(class_idx)]
+            cv2.putText(frame, f"ID: {track_id} {class_name}", (x1, y1 - 10),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 255), 2)
+            cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
+
+**4.Conversion et Affichage de l'Image dans Streamlit**
+
+ Pour intégrer le flux vidéo traité dans Streamlit, il est nécessaire de convertir les images du format BGR (OpenCV) au format RGB.
+
+
+.. code-bloc:: python 
+
+    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    stframe.image(frame, channels="RGB", use_column_width=True)
+
+**5. Interface Principale avec Streamlit**
+
+L'interface principale offre à l'utilisateur le choix entre :
+
+Télécharger une vidéo.
+Utiliser la caméra en temps réel.
+Un bouton permet d'ouvrir et de fermer la source vidéo
+
+.. code-block:: python 
+
+    st.title("Interface de Supervision")
+
+    option = st.selectbox("Choisissez la source de vidéo :", ["Vidéo Uploadée", "Caméra"])
+
+    if not st.session_state.video_open:
+       if option == "Vidéo Uploadée":
+          uploaded_file = st.file_uploader("Choisissez un fichier vidéo", type=["mp4", "avi", "mov", "mkv"])
+          if uploaded_file is not None:
+             with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
+                tmp_file.write(uploaded_file.read())
+                video_path = tmp_file.name
+             if st.button("Ouvrir la vidéo"):
+                st.session_state.video_open = True
+                open_video(video_path=video_path)
+       elif option == "Caméra":
+          if st.button("Ouvrir la caméra"):
+             st.session_state.video_open = True
+             open_video(use_camera=True)
+   else:
+       if st.button("Fermer la vidéo / caméra"):
+          st.session_state.video_open = False
+
+L'interface de supervision développée avec Streamlit et le modèle YOLO permet une visualisation efficace du processus de tri des déchets. En utilisant une vidéo téléchargée ou un flux en direct, cette application facilite le suivi en temps réel des performances du système de tri. Grâce aux fonctionnalités interactives et à la détection précise des objets, cette solution contribue à améliorer l'efficacité des lignes de tri automatisées.
+    
