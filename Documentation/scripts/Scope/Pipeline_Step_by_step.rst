@@ -325,3 +325,8 @@ Finalement, voici l'interface que nous avons développée, qui facilite la super
 .. figure:: /Documentation/images/interfacee3.png
    :width: 130%
    :alt: Alternative text for the image
+
+
+.. figure:: /Documentation/images/interface4.png
+   :width: 140%
+   :alt: Alternative text for the image
