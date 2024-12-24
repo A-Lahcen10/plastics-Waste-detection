@@ -317,11 +317,11 @@ Télécharger une vidéo : Cette option permet de visionner une vidéo et d'affi
 Ouvrir la caméra : Cette option permet d'activer la caméra pour capturer en temps réel les déchets présents devant celle-ci, afin d'analyser leur classification par le modèle et vérifier l'efficacité du tri en direct.
 
 .. figure:: /Documentation/images/interface2.jpeg
-   :width: 100%
+   :width: 130%
    :alt: Alternative text for the image
 
 Finalement, voici l'interface que nous avons développée, qui facilite la supervision et la visualisation d'une ligne de tri.
 
 .. figure:: /Documentation/images/interface3.jpeg
-   :width: 100%
+   :width: 130%
    :alt: Alternative text for the image
