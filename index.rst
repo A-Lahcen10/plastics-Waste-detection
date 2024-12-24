@@ -15,9 +15,7 @@ Projet de Détection et Suivi des Déchets Plastiques
 
 
 
-.. toctree::
-   :maxdepth: 3
-   :caption: Introduction
+
 
    Documentation/scripts/Scope/introduction.rst
    Documentation/scripts/Scope/Dataset.rst
