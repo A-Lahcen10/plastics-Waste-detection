@@ -67,8 +67,8 @@ if "video_open" not in st.session_state:
     st.session_state.video_open = False
 if "selected_arm" not in st.session_state:
     st.session_state.selected_arm = None
-    
-st.title("Interface de Supervision des Bras Robotiques")
+
+st.title("Interface de Supervision ")
 st.write("Sélectionnez un bras robotique pour visualiser ou consulter le nombre trié.")
 
 # Sélection du bras robotique

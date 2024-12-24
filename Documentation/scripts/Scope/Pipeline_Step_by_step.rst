@@ -266,7 +266,7 @@ Code :
     if "selected_arm" not in st.session_state:
        st.session_state.selected_arm = None
 
-    st.title("Interface de Supervision des Bras Robotiques")
+    st.title("Interface de Supervision ")
     st.write("Sélectionnez un bras robotique pour visualiser ou consulter le nombre trié.")
 
     # Sélection du bras robotique
@@ -322,6 +322,6 @@ Ouvrir la caméra : Cette option permet d'activer la caméra pour capturer en te
 
 Finalement, voici l'interface que nous avons développée, qui facilite la supervision et la visualisation d'une ligne de tri.
 
-.. figure:: /Documentation/images/interface3.jpeg
+.. figure:: /Documentation/images/interfacee3.jpeg
    :width: 130%
    :alt: Alternative text for the image
