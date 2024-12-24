@@ -307,7 +307,7 @@ Le troisième bras trie les déchets en PP .
 Le quatrième bras trie les déchets en PS .
 
 .. figure:: /Documentation/images/interface1.jpeg
-   :width: 100%
+   :width: 50%
    :alt: Alternative text for the image
 
 Dans le cadre de la supervision d'une ligne de tri réel, une fois le bras sélectionné, l'interface affiche en temps réel les informations sur son état de fonctionnement, permettant ainsi de vérifier si le tri se déroule correctement. Cela permet à l'opérateur de détecter rapidement toute anomalie ou dysfonctionnement. Cependant, dans notre cas, où il n'y a pas de ligne de tri réel, nous avons décidé d'utiliser deux options :
@@ -317,7 +317,7 @@ Télécharger une vidéo : Cette option permet de visionner une vidéo et d'affi
 Ouvrir la caméra : Cette option permet d'activer la caméra pour capturer en temps réel les déchets présents devant celle-ci, afin d'analyser leur classification par le modèle et vérifier l'efficacité du tri en direct.
 
 .. figure:: /Documentation/images/interface2.jpeg
-   :width: 130%
+   :width: 100%
    :alt: Alternative text for the image
 
 Finalement, voici l'interface que nous avons développée, qui facilite la supervision et la visualisation d'une ligne de tri.
