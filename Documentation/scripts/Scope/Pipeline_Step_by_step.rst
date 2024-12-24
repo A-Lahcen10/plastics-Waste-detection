@@ -322,6 +322,6 @@ Ouvrir la caméra : Cette option permet d'activer la caméra pour capturer en te
 
 Finalement, voici l'interface que nous avons développée, qui facilite la supervision et la visualisation d'une ligne de tri.
 
-.. figure:: /Documentation/images/interfacee3.jpeg
+.. figure:: /Documentation/images/interfacee3.png
    :width: 130%
    :alt: Alternative text for the image
