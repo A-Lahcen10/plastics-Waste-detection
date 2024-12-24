@@ -329,5 +329,5 @@ Finalement, voici l'interface que nous avons développée, qui facilite la super
 
 
 .. figure:: /Documentation/images/interfacee4.png
-   :width: 90%
+   :width: 50%
    :alt: Alternative text for the image
