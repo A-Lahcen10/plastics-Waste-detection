@@ -231,18 +231,12 @@ YOLO renvoie les coordonnées des boîtes de détection, les classes détectées
             cv2.putText(frame, f"ID: {track_id} {class_name}", (x1, y1 - 10),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 255), 2)
             cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
-
-**4.Conversion et Affichage de l'Image dans Streamlit**
-
- Pour intégrer le flux vidéo traité dans Streamlit, il est nécessaire de convertir les images du format BGR (OpenCV) au format RGB.
-
-
-.. code-bloc:: python 
-
+    #Conversion et Affichage de l'Image dans Streamlit :
     frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     stframe.image(frame, channels="RGB", use_column_width=True)
 
-**5. Interface Principale avec Streamlit**
+
+**4. Interface Principale avec Streamlit**
 
 L'interface principale offre à l'utilisateur le choix entre :
 
