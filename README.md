@@ -1,2 +1,2 @@
-# My first Github Project 
+# Our first Github Project 
 Plastic Waste Detection
