@@ -8,9 +8,7 @@ model = YOLO('plastics-Waste-detection-and-Tracking\model.pt')
 class_list = model.names
 # Les classes définies 
 
-# Initialisation des états dans la session Streamlit
-if "video_open" not in st.session_state:
-    st.session_state.video_open = False
+
 # Fonction pour afficher le flux vidéo et détecter les objets avec YOLO
 def open_video(video_path=None, use_camera=False):
     if use_camera:
@@ -64,9 +62,23 @@ def open_video(video_path=None, use_camera=False):
     cap.release()
 
 # Interface principale Streamlit
-st.title("Interface de Supervision ")
+# Initialisation des états dans la session Streamlit
+if "video_open" not in st.session_state:
+    st.session_state.video_open = False
+if "selected_arm" not in st.session_state:
+    st.session_state.selected_arm = None
+    
+st.title("Interface de Supervision des Bras Robotiques")
+st.write("Sélectionnez un bras robotique pour visualiser ou consulter le nombre trié.")
 
+# Sélection du bras robotique
+st.sidebar.header("Sélection du Bras Robotique")
+arm_options = ["Bras robotique 1 (HDPE)", "Bras robotique 2 (PP)", "Bras robotique 3 (PS)","Bras robotique 4 (PET)"]
+selected_arm = st.sidebar.selectbox("Choisissez un bras :", arm_options)
 
+# Mise à jour de l'état du bras sélectionné
+st.session_state.selected_arm = selected_arm
+st.header(f"Contrôle pour {selected_arm}")
 # Ajouter un sélecteur pour choisir entre vidéo et caméra
 option = st.selectbox("Choisissez la source de vidéo :", ["Vidéo Uploadée", "Caméra"])
 

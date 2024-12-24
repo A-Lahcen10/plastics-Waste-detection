@@ -131,6 +131,15 @@ La dernière étape consiste à entraîner le modèle YOLO11n en utilisant le fi
     !yolo task=detect train model=yolo11n.pt data=/content/drive/MyDrive/object_detection/data/dataset.yaml epochs=60
 
 
+Voila les resultats de l'entrainement :
+
+.. figure:: /Documentation/images/resultatt.jpeg
+   :width: 100%
+   :alt: Alternative text for the image
+
+Les graphiques montrent une convergence régulière des pertes et une amélioration constante des métriques. Le modèle atteint une haute précision et un rappel élevé, indiquant qu'il est bien entraîné pour la tâche de détection des objets.
+
+
 5eme etape : Évaluation du modèle
 ---------------------------------
 
@@ -149,13 +158,21 @@ nous avons obtenu les résultats suivants lors de l'évaluation du modèle YOLOv
    :alt: Alternative text for the image
 
 
-**-Précision (P) :** De manière générale, la précision est élevée, avec des valeurs exceptionnelles pour certaines classes comme PET et HDPE. Cela signifie que le modèle détecte de manière fiable les déchets sans générer trop de faux positifs.
+Et après la phase de validation, nous avons réalisé un test du modèle pour évaluer ses performances. Voici quelques exemples qui illustrent sa précision
 
-**-Rappel (R) :** Le rappel élevé montre que le modèle parvient à capturer la majorité des instances des différentes classes de déchets, minimisant ainsi les faux négatifs. 
+.. figure:: /Documentation/images/res1.jpeg
+   :width: 100%
+   :alt: Alternative text for the image
 
-**-mAP50 et mAP50-95 :** Ces valeurs montrent que le modèle est capable de détecter et de localiser avec une grande précision, en particulier pour des classes comme PET (mAP50 = 0.995) et HDPE (mAP50 = 0.975).
 
-Ces résultats démontrent que notre modèle YOLOv11n offre des performances solides et fiables pour la détection des déchets plastiques. L'évaluation est donc cruciale pour confirmer que le modèle répond aux exigences d'une application en temps réel, capable de détecter et classer les déchets plastiques dans des environnements industriels.
+.. figure:: /Documentation/images/res2.jpeg
+   :width: 100%
+   :alt: Alternative text for the image
+
+
+.. figure:: /Documentation/images/res3.jpeg
+   :width: 100%
+   :alt: Alternative text for the image
 
 6eme etape : Déploiement du Modèle : Création d'une Interface de Supervision pour une Ligne de Tri des Déchets
 --------------------------------------------------------------------------------------------------------------
@@ -245,9 +262,25 @@ Utiliser la caméra en temps réel.
 Un bouton permet d'ouvrir et de fermer la source vidéo
 
 .. code-block:: python 
+   
+   # Initialisation des états dans la session Streamlit
+    if "video_open" not in st.session_state:
+       st.session_state.video_open = False
+    if "selected_arm" not in st.session_state:
+       st.session_state.selected_arm = None
 
-    st.title("Interface de Supervision")
+    st.title("Interface de Supervision des Bras Robotiques")
+    st.write("Sélectionnez un bras robotique pour visualiser ou consulter le nombre trié.")
 
+    # Sélection du bras robotique
+    st.sidebar.header("Sélection du Bras Robotique")
+    arm_options = ["Bras robotique 1 (HDPE)", "Bras robotique 2 (PP)", "Bras robotique 3 (PS)","Bras robotique 4 (PET)"]
+    selected_arm = st.sidebar.selectbox("Choisissez un bras :", arm_options)
+
+    # Mise à jour de l'état du bras sélectionné
+    st.session_state.selected_arm = selected_arm
+    st.header(f"Contrôle pour {selected_arm}")
+    # Ajouter un sélecteur pour choisir entre vidéo et caméra
     option = st.selectbox("Choisissez la source de vidéo :", ["Vidéo Uploadée", "Caméra"])
 
     if not st.session_state.video_open:
@@ -264,9 +297,10 @@ Un bouton permet d'ouvrir et de fermer la source vidéo
           if st.button("Ouvrir la caméra"):
              st.session_state.video_open = True
              open_video(use_camera=True)
-   else:
-       if st.button("Fermer la vidéo / caméra"):
-          st.session_state.video_open = False
+    else:
+        if st.button("Fermer la vidéo / caméra"):
+           st.session_state.video_open = False
 
+   
 L'interface de supervision développée avec Streamlit et le modèle YOLO permet une visualisation efficace du processus de tri des déchets. En utilisant une vidéo téléchargée ou un flux en direct, cette application facilite le suivi en temps réel des performances du système de tri. Grâce aux fonctionnalités interactives et à la détection précise des objets, cette solution contribue à améliorer l'efficacité des lignes de tri automatisées.
-    
+ 
