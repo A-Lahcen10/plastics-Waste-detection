@@ -255,11 +255,8 @@ YOLO renvoie les coordonnées des boîtes de détection, les classes détectées
 
 **4. Interface Principale avec Streamlit**
 
-L'interface principale offre à l'utilisateur le choix entre :
-
-Télécharger une vidéo.
-Utiliser la caméra en temps réel.
-Un bouton permet d'ouvrir et de fermer la source vidéo
+L'interface de supervision développée avec Streamlit et le modèle YOLO permet une visualisation efficace du processus de tri des déchets. cette application facilite le suivi en temps réel des performances du système de tri. Grâce aux fonctionnalités interactives et à la détection précise des objets, cette solution contribue à améliorer l'efficacité des lignes de tri automatisées.
+Code :
 
 .. code-block:: python 
    
@@ -302,5 +299,25 @@ Un bouton permet d'ouvrir et de fermer la source vidéo
            st.session_state.video_open = False
 
    
-L'interface de supervision développée avec Streamlit et le modèle YOLO permet une visualisation efficace du processus de tri des déchets. En utilisant une vidéo téléchargée ou un flux en direct, cette application facilite le suivi en temps réel des performances du système de tri. Grâce aux fonctionnalités interactives et à la détection précise des objets, cette solution contribue à améliorer l'efficacité des lignes de tri automatisées.
- 
+Fonctionnalités de l'interface :L'interface permet de sélectionner facilement quel bras robotique doit être supervisé. Chaque bras est responsable du tri d'un type de déchet spécifique :
+
+Le premier bras trie les déchets en HDPE.
+Le deuxième bras trie les déchets en PET .
+Le troisième bras trie les déchets en PP .
+Le quatrième bras trie les déchets en PS .
+
+.. figure:: /Documentation/images/interface1.jpeg
+   :width: 40%
+   :alt: Alternative text for the image
+
+Dans le cadre de la supervision d'une ligne de tri réel, une fois le bras sélectionné, l'interface affiche en temps réel les informations sur son état de fonctionnement, permettant ainsi de vérifier si le tri se déroule correctement. Cela permet à l'opérateur de détecter rapidement toute anomalie ou dysfonctionnement. Cependant, dans notre cas, où il n'y a pas de ligne de tri réel, nous avons décidé d'utiliser deux options :
+
+Télécharger une vidéo : Cette option permet de visionner une vidéo et d'afficher le résultat après la détection et le suivi des déchets dans la vidéo.
+
+Ouvrir la caméra : Cette option permet d'activer la caméra pour capturer en temps réel les déchets présents devant celle-ci, afin d'analyser leur classification par le modèle et vérifier l'efficacité du tri en direct.
+
+.. figure:: /Documentation/images/interface2.jpeg
+   :width: 40%
+   :alt: Alternative text for the image
+
+Finalement, voici l'interface que nous avons développée, qui facilite la supervision et la visualisation d'une ligne de tri.
