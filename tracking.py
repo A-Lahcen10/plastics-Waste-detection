@@ -1,12 +1,12 @@
 import cv2
 from ultralytics import YOLO
 # Load the YOLO model
-model = YOLO('plastics-Waste-detection-and-Tracking/best_final.pt')
+model = YOLO('best_final.pt')
 
 class_list = model.names
 
 # Open the video file
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture('video4.mp4')
 
 
 
