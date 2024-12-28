@@ -4,7 +4,7 @@ Projet de Détection et Suivi des Déchets Plastiques
 
 
 
-- **Superviseur**:  Mr. Masrour Tawfik |linkedin_Masrour|
+- **Superviseur** :  Mr. MASROUR Tawfik |linkedin_Masrour|
 .. |linkedin_Masrour| image:: Documentation/images/linkedinn.jfif
     :width: 20
     :height: 20
@@ -12,7 +12,7 @@ Projet de Détection et Suivi des Déchets Plastiques
 
 
 
-- **Réalisé par**:   AMNEZOU Lahcen |linkedin_lahcen| & BOURKIBA Salma |linkedin_salma|  
+- **Réalisé par** :   AMNEZOU Lahcen |linkedin_lahcen| & BOURKIBA Salma |linkedin_salma|  
 .. |linkedin_lahcen| image:: Documentation/images/linkedinn.jfif
     :width: 20
     :height: 20
