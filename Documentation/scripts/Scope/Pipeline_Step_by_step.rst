@@ -161,7 +161,7 @@ nous avons obtenu les résultats suivants lors de l'évaluation du modèle YOLOv
 Et après la phase de validation, nous avons réalisé un test du modèle pour évaluer ses performances. Voici quelques exemples qui illustrent sa précision
 
 .. figure:: /Documentation/images/val.batch.png
-   :width: 80%
+   :width: 70%
    :alt: Alternative text for the image
 
 .. figure:: /Documentation/images/res1.jpeg
