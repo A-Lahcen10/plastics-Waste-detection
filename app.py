@@ -69,7 +69,7 @@ if "selected_arm" not in st.session_state:
     st.session_state.selected_arm = None
 
 st.title("Interface de Supervision ")
-st.write("Sélectionnez un bras robotique pour visualiser ou consulter le nombre trié.")
+st.write("Sélectionnez un bras robotique pour visualiser .")
 
 # Sélection du bras robotique
 st.sidebar.header("Sélection du Bras Robotique")
