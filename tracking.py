@@ -6,7 +6,7 @@ model = YOLO('best_final.pt')
 class_list = model.names
 
 # Open the video file
-cap = cv2.VideoCapture('video4.mp4')
+cap = cv2.VideoCapture('video1.mp4')
 
 
 
