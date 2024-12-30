@@ -24,7 +24,7 @@ Projet de Détection et Suivi des Déchets Plastiques
 
 
 
-
+Lien vers github repository:  `Cliquez ici <https://github.com/A-Lahcen10/plastics-Waste-detection-and-Tracking>`__ 
 
 
 

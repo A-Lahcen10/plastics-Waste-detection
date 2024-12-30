@@ -49,7 +49,7 @@ def open_video(video_path=None, use_camera=False):
                 
                 class_name = class_list[int(class_idx)]
             
-                cv2.putText(frame, f"ID: {track_id} {class_name}", (x1, y1 - 10),
+                cv2.putText(frame, f"ID:  {class_name}", (x1, y1 - 10),
                             cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 255), 2)
                 cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
 
